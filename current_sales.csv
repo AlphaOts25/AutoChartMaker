@@ -1,0 +1,651 @@
+Order ID,Order Date,Sales Region,Product Category,Sales Channel,Total Revenue ($),Customer Rating [Product Quality],Customer Rating [Delivery Speed]
+ORD-8892,2026-01-01,South,Home Goods,Online Store,340.7,Satisfied,Satisfied
+ORD-2374,2026-01-01,East,Clothing,Direct Sales,1028.14,Satisfied,Satisfied
+ORD-6849,2026-01-02,North,Home Goods,Direct Sales,1505.05,Dissatisfied,Satisfied
+ORD-9668,2026-01-02,North,Electronics,Online Store,461.84,Neutral,Satisfied
+ORD-6582,2026-01-02,West,Electronics,Online Store,334.41,Satisfied,Neutral
+ORD-3468,2026-01-02,South,Electronics,Direct Sales,656.84,Satisfied,Satisfied
+ORD-1825,2026-01-04,South,Home Goods,Online Store,177.69,Satisfied,Satisfied
+ORD-6121,2026-01-07,North,Electronics,Retail Branch,832.51,Satisfied,Satisfied
+ORD-1196,2026-01-08,North,Home Goods,Online Store,1481.21,Satisfied,Satisfied
+ORD-2542,2026-01-09,South,Clothing,Online Store,871.16,Satisfied,Satisfied
+ORD-4374,2026-01-10,South,Electronics,Online Store,1699.01,Satisfied,Neutral
+ORD-5930,2026-01-10,South,Electronics,Online Store,1666.59,Satisfied,Satisfied
+ORD-6008,2026-01-11,South,Home Goods,Online Store,770.23,Satisfied,Satisfied
+ORD-4303,2026-01-11,South,Electronics,Retail Branch,404.88,Satisfied,Satisfied
+ORD-9562,2026-01-11,South,Clothing,Online Store,1489.01,Neutral,Satisfied
+ORD-4089,2026-01-12,North,Home Goods,Direct Sales,1496.2,Neutral,Satisfied
+ORD-5588,2026-01-13,North,Software,Retail Branch,247.31,Satisfied,Satisfied
+ORD-7288,2026-01-14,South,Electronics,Online Store,803.61,Satisfied,Neutral
+ORD-3472,2026-01-15,South,Clothing,Direct Sales,1698.69,Satisfied,Satisfied
+ORD-9446,2026-01-16,North,Electronics,Online Store,982.53,Satisfied,Satisfied
+ORD-1214,2026-01-16,South,Electronics,Online Store,1880.64,Satisfied,Dissatisfied
+ORD-3525,2026-01-18,South,Home Goods,Direct Sales,1717.71,Satisfied,Neutral
+ORD-7448,2026-01-18,North,Electronics,Online Store,1325.0,Satisfied,Satisfied
+ORD-4977,2026-01-19,South,Electronics,Retail Branch,1667.39,Satisfied,Satisfied
+ORD-4936,2026-01-20,East,Electronics,Online Store,480.31,Dissatisfied,Satisfied
+ORD-1473,2026-01-20,North,Home Goods,Online Store,566.44,Dissatisfied,Satisfied
+ORD-3896,2026-01-21,South,Clothing,Direct Sales,415.45,Neutral,Neutral
+ORD-4583,2026-01-21,East,Electronics,Retail Branch,212.6,Satisfied,Neutral
+ORD-3401,2026-01-22,South,Electronics,Retail Branch,423.01,Satisfied,Satisfied
+ORD-5663,2026-01-23,South,Software,Direct Sales,1249.84,Satisfied,Neutral
+ORD-3735,2026-01-24,East,Electronics,Online Store,417.47,Satisfied,Satisfied
+ORD-1740,2026-01-24,North,Electronics,Online Store,1552.43,Satisfied,Satisfied
+ORD-8297,2026-01-24,North,Electronics,Online Store,1351.25,Satisfied,Satisfied
+ORD-4363,2026-01-24,South,Electronics,Direct Sales,1284.5,Neutral,Satisfied
+ORD-2547,2026-01-26,South,Electronics,Online Store,1276.12,Satisfied,Neutral
+ORD-3693,2026-01-26,East,Clothing,Online Store,205.23,Satisfied,Satisfied
+ORD-8436,2026-01-26,South,Electronics,Online Store,1923.77,Satisfied,Dissatisfied
+ORD-4528,2026-01-27,South,Electronics,Retail Branch,1760.81,Satisfied,Neutral
+ORD-6498,2026-01-28,South,Software,Online Store,1530.93,Neutral,Neutral
+ORD-5086,2026-01-28,North,Clothing,Online Store,1221.01,Satisfied,Neutral
+ORD-8402,2026-01-30,South,Software,Online Store,1776.18,Satisfied,Satisfied
+ORD-3203,2026-01-30,North,Electronics,Direct Sales,449.51,Satisfied,Dissatisfied
+ORD-6246,2026-01-30,South,Electronics,Direct Sales,1437.18,Dissatisfied,Neutral
+ORD-4467,2026-01-31,South,Clothing,Retail Branch,928.84,Neutral,Satisfied
+ORD-8313,2026-01-31,West,Home Goods,Online Store,1676.38,Satisfied,Satisfied
+ORD-1728,2026-01-31,East,Electronics,Retail Branch,1433.85,Satisfied,Dissatisfied
+ORD-8835,2026-01-31,South,Home Goods,Retail Branch,360.96,Satisfied,Satisfied
+ORD-3241,2026-02-02,North,Electronics,Online Store,549.84,Satisfied,Neutral
+ORD-4289,2026-02-02,South,Electronics,Online Store,1108.86,Satisfied,Satisfied
+ORD-4124,2026-02-03,North,Home Goods,Direct Sales,760.24,Satisfied,Satisfied
+ORD-9430,2026-02-03,North,Electronics,Direct Sales,880.61,Satisfied,Dissatisfied
+ORD-4552,2026-02-04,South,Electronics,Online Store,208.36,Satisfied,Satisfied
+ORD-5842,2026-02-04,South,Software,Online Store,1361.43,Satisfied,Satisfied
+ORD-9580,2026-02-04,East,Home Goods,Direct Sales,1196.09,Neutral,Satisfied
+ORD-7328,2026-02-05,South,Electronics,Retail Branch,921.89,Neutral,Neutral
+ORD-1568,2026-02-05,South,Electronics,Direct Sales,1505.05,Satisfied,Satisfied
+ORD-3666,2026-02-06,South,Electronics,Online Store,1598.1,Satisfied,Satisfied
+ORD-1113,2026-02-08,South,Electronics,Online Store,1037.28,Satisfied,Satisfied
+ORD-3366,2026-02-09,South,Software,Direct Sales,271.41,Satisfied,Satisfied
+ORD-3378,2026-02-09,North,Home Goods,Online Store,632.27,Satisfied,Dissatisfied
+ORD-5271,2026-02-09,North,Electronics,Direct Sales,138.53,Dissatisfied,Satisfied
+ORD-4626,2026-02-09,West,Software,Retail Branch,1001.94,Neutral,Dissatisfied
+ORD-7942,2026-02-09,North,Home Goods,Online Store,1793.35,Satisfied,Satisfied
+ORD-5126,2026-02-11,West,Software,Retail Branch,799.14,Satisfied,Satisfied
+ORD-8413,2026-02-11,South,Electronics,Online Store,1651.15,Satisfied,Satisfied
+ORD-9603,2026-02-12,South,Electronics,Online Store,1269.56,Satisfied,Satisfied
+ORD-2787,2026-02-14,East,Home Goods,Retail Branch,1786.59,Satisfied,Satisfied
+ORD-7243,2026-02-14,South,Electronics,Online Store,1736.7,Dissatisfied,Satisfied
+ORD-2160,2026-02-14,North,Home Goods,Retail Branch,994.94,Satisfied,Satisfied
+ORD-6907,2026-02-14,West,Electronics,Online Store,1746.16,Satisfied,Neutral
+ORD-6030,2026-02-14,West,Electronics,Retail Branch,1805.62,Satisfied,Satisfied
+ORD-3697,2026-02-15,West,Software,Retail Branch,986.81,Satisfied,Satisfied
+ORD-8172,2026-02-15,South,Clothing,Direct Sales,907.67,Satisfied,Satisfied
+ORD-3817,2026-02-15,West,Home Goods,Online Store,1242.99,Satisfied,Satisfied
+ORD-9808,2026-02-15,South,Home Goods,Retail Branch,725.28,Neutral,Satisfied
+ORD-4316,2026-02-17,South,Electronics,Online Store,982.65,Satisfied,Neutral
+ORD-4881,2026-02-17,South,Electronics,Online Store,1337.87,Satisfied,Satisfied
+ORD-9086,2026-02-18,West,Electronics,Retail Branch,1458.33,Dissatisfied,Satisfied
+ORD-7492,2026-02-18,West,Home Goods,Retail Branch,1318.83,Satisfied,Satisfied
+ORD-9329,2026-02-19,South,Software,Online Store,1330.14,Satisfied,Satisfied
+ORD-3259,2026-02-20,South,Home Goods,Direct Sales,1596.92,Neutral,Satisfied
+ORD-2272,2026-02-21,South,Electronics,Online Store,1690.18,Satisfied,Satisfied
+ORD-1335,2026-02-21,South,Clothing,Online Store,1449.98,Satisfied,Satisfied
+ORD-5957,2026-02-22,South,Software,Online Store,1106.03,Satisfied,Neutral
+ORD-6998,2026-02-22,East,Electronics,Online Store,1932.14,Satisfied,Dissatisfied
+ORD-1783,2026-02-23,West,Electronics,Direct Sales,427.43,Satisfied,Satisfied
+ORD-9096,2026-02-24,South,Electronics,Direct Sales,528.03,Satisfied,Satisfied
+ORD-2565,2026-02-24,South,Clothing,Direct Sales,427.51,Satisfied,Satisfied
+ORD-5570,2026-02-24,East,Electronics,Online Store,1132.23,Satisfied,Satisfied
+ORD-6150,2026-02-24,South,Electronics,Online Store,549.26,Satisfied,Satisfied
+ORD-4444,2026-02-25,East,Software,Online Store,1909.56,Neutral,Satisfied
+ORD-5039,2026-02-26,North,Home Goods,Direct Sales,1263.08,Satisfied,Satisfied
+ORD-8081,2026-02-27,East,Electronics,Retail Branch,1209.94,Neutral,Satisfied
+ORD-7980,2026-02-27,West,Software,Retail Branch,1534.87,Neutral,Satisfied
+ORD-6486,2026-02-27,East,Electronics,Direct Sales,850.27,Dissatisfied,Dissatisfied
+ORD-1191,2026-02-28,West,Software,Retail Branch,542.34,Satisfied,Satisfied
+ORD-1511,2026-03-01,South,Electronics,Retail Branch,1389.73,Satisfied,Neutral
+ORD-7368,2026-03-01,North,Electronics,Online Store,1083.14,Neutral,Neutral
+ORD-9905,2026-03-02,South,Electronics,Online Store,811.98,Satisfied,Satisfied
+ORD-8460,2026-03-02,South,Electronics,Online Store,1163.22,Satisfied,Satisfied
+ORD-1310,2026-03-02,South,Home Goods,Online Store,159.98,Satisfied,Neutral
+ORD-7446,2026-03-02,South,Electronics,Online Store,396.34,Satisfied,Neutral
+ORD-9342,2026-03-03,North,Electronics,Retail Branch,356.5,Neutral,Satisfied
+ORD-1692,2026-03-04,South,Electronics,Online Store,1436.74,Satisfied,Neutral
+ORD-3232,2026-03-05,South,Electronics,Direct Sales,1379.06,Satisfied,Satisfied
+ORD-6525,2026-03-06,West,Software,Online Store,1618.54,Satisfied,Satisfied
+ORD-7739,2026-03-07,East,Home Goods,Retail Branch,686.4,Satisfied,Satisfied
+ORD-5123,2026-03-07,South,Software,Online Store,946.29,Satisfied,Satisfied
+ORD-5564,2026-03-07,South,Clothing,Online Store,972.04,Satisfied,Satisfied
+ORD-5065,2026-03-09,North,Software,Online Store,920.77,Satisfied,Dissatisfied
+ORD-2302,2026-03-09,South,Home Goods,Direct Sales,737.4,Satisfied,Satisfied
+ORD-9202,2026-03-10,South,Electronics,Online Store,717.72,Satisfied,Satisfied
+ORD-6678,2026-03-11,South,Clothing,Online Store,197.73,Satisfied,Satisfied
+ORD-1767,2026-03-11,South,Home Goods,Direct Sales,577.53,Satisfied,Dissatisfied
+ORD-3224,2026-03-12,South,Software,Retail Branch,386.53,Satisfied,Satisfied
+ORD-9998,2026-03-12,North,Home Goods,Direct Sales,1554.29,Neutral,Neutral
+ORD-3141,2026-03-12,West,Home Goods,Retail Branch,786.59,Satisfied,Satisfied
+ORD-4928,2026-03-13,South,Electronics,Direct Sales,1169.46,Neutral,Satisfied
+ORD-8943,2026-03-13,South,Electronics,Direct Sales,1171.21,Satisfied,Dissatisfied
+ORD-4517,2026-03-13,South,Software,Online Store,299.02,Dissatisfied,Dissatisfied
+ORD-9628,2026-03-14,West,Electronics,Retail Branch,811.58,Satisfied,Neutral
+ORD-5894,2026-03-14,South,Electronics,Retail Branch,903.72,Satisfied,Satisfied
+ORD-8524,2026-03-15,North,Electronics,Retail Branch,1262.6,Satisfied,Neutral
+ORD-1400,2026-03-16,South,Electronics,Retail Branch,1806.67,Dissatisfied,Satisfied
+ORD-9218,2026-03-16,South,Electronics,Online Store,211.07,Satisfied,Satisfied
+ORD-5089,2026-03-16,East,Clothing,Direct Sales,610.13,Satisfied,Neutral
+ORD-4766,2026-03-17,South,Clothing,Online Store,1598.7,Satisfied,Satisfied
+ORD-2211,2026-03-18,South,Electronics,Online Store,1928.65,Satisfied,Neutral
+ORD-7524,2026-03-19,North,Electronics,Online Store,1454.88,Satisfied,Satisfied
+ORD-9218,2026-03-19,South,Electronics,Online Store,343.02,Satisfied,Satisfied
+ORD-1297,2026-03-20,South,Software,Online Store,1780.99,Satisfied,Satisfied
+ORD-5353,2026-03-20,South,Home Goods,Direct Sales,543.31,Neutral,Dissatisfied
+ORD-2202,2026-03-20,South,Electronics,Online Store,1108.61,Satisfied,Neutral
+ORD-8931,2026-03-21,South,Electronics,Retail Branch,248.29,Satisfied,Satisfied
+ORD-8956,2026-03-22,South,Home Goods,Online Store,1260.46,Neutral,Satisfied
+ORD-3747,2026-03-23,South,Electronics,Online Store,873.47,Satisfied,Satisfied
+ORD-5266,2026-03-23,East,Electronics,Direct Sales,1318.4,Satisfied,Satisfied
+ORD-2928,2026-03-24,West,Clothing,Online Store,455.01,Satisfied,Satisfied
+ORD-7765,2026-03-24,West,Electronics,Online Store,397.64,Satisfied,Dissatisfied
+ORD-9844,2026-03-24,North,Electronics,Online Store,1101.35,Neutral,Dissatisfied
+ORD-5671,2026-03-25,South,Electronics,Online Store,1313.61,Satisfied,Satisfied
+ORD-5421,2026-03-27,South,Electronics,Online Store,1313.15,Satisfied,Satisfied
+ORD-9860,2026-03-28,South,Electronics,Retail Branch,200.59,Satisfied,Satisfied
+ORD-4689,2026-03-29,South,Electronics,Online Store,1185.5,Neutral,Satisfied
+ORD-8517,2026-03-29,South,Clothing,Online Store,1253.97,Dissatisfied,Dissatisfied
+ORD-1549,2026-03-29,South,Clothing,Online Store,292.32,Satisfied,Satisfied
+ORD-8661,2026-03-30,South,Electronics,Retail Branch,152.47,Satisfied,Satisfied
+ORD-1661,2026-03-30,South,Clothing,Online Store,834.42,Satisfied,Satisfied
+ORD-3153,2026-03-31,South,Electronics,Online Store,209.2,Satisfied,Satisfied
+ORD-7970,2026-03-31,South,Electronics,Online Store,1342.3,Neutral,Satisfied
+ORD-8925,2026-04-02,South,Electronics,Direct Sales,1214.19,Satisfied,Neutral
+ORD-7510,2026-04-03,South,Electronics,Retail Branch,1879.98,Satisfied,Satisfied
+ORD-1544,2026-04-04,North,Home Goods,Online Store,625.18,Satisfied,Neutral
+ORD-6865,2026-04-04,North,Electronics,Online Store,1668.95,Satisfied,Satisfied
+ORD-7369,2026-04-05,North,Software,Retail Branch,1267.01,Dissatisfied,Satisfied
+ORD-8373,2026-04-05,South,Electronics,Online Store,140.57,Satisfied,Dissatisfied
+ORD-9091,2026-04-05,West,Home Goods,Online Store,335.06,Satisfied,Satisfied
+ORD-2229,2026-04-07,North,Software,Direct Sales,1270.8,Satisfied,Satisfied
+ORD-8211,2026-04-07,West,Electronics,Online Store,1568.26,Satisfied,Satisfied
+ORD-9369,2026-04-07,West,Electronics,Retail Branch,1025.16,Neutral,Satisfied
+ORD-6728,2026-04-09,North,Software,Direct Sales,1342.18,Satisfied,Dissatisfied
+ORD-3806,2026-04-09,South,Electronics,Online Store,1523.22,Satisfied,Satisfied
+ORD-1522,2026-04-09,East,Electronics,Online Store,474.61,Satisfied,Satisfied
+ORD-5876,2026-04-10,North,Electronics,Retail Branch,821.02,Satisfied,Satisfied
+ORD-4567,2026-04-10,East,Electronics,Direct Sales,1727.76,Satisfied,Satisfied
+ORD-6704,2026-04-10,North,Electronics,Retail Branch,1752.22,Satisfied,Satisfied
+ORD-6672,2026-04-10,South,Electronics,Online Store,522.98,Neutral,Satisfied
+ORD-9475,2026-04-11,South,Electronics,Retail Branch,1114.19,Satisfied,Neutral
+ORD-4365,2026-04-12,West,Software,Online Store,1504.71,Neutral,Dissatisfied
+ORD-3187,2026-04-12,North,Electronics,Retail Branch,610.51,Satisfied,Satisfied
+ORD-9345,2026-04-12,South,Home Goods,Online Store,1546.73,Satisfied,Satisfied
+ORD-7433,2026-04-12,South,Electronics,Direct Sales,1139.67,Satisfied,Satisfied
+ORD-4004,2026-04-12,West,Clothing,Online Store,664.45,Satisfied,Dissatisfied
+ORD-5678,2026-04-12,West,Home Goods,Online Store,1208.78,Satisfied,Satisfied
+ORD-7855,2026-04-12,West,Electronics,Retail Branch,588.21,Satisfied,Satisfied
+ORD-2541,2026-04-13,South,Electronics,Direct Sales,1216.77,Satisfied,Satisfied
+ORD-9880,2026-04-13,South,Electronics,Retail Branch,1791.46,Satisfied,Satisfied
+ORD-1493,2026-04-13,South,Clothing,Online Store,289.17,Satisfied,Dissatisfied
+ORD-5274,2026-04-14,South,Electronics,Retail Branch,956.32,Satisfied,Satisfied
+ORD-4560,2026-04-14,South,Electronics,Online Store,1885.45,Satisfied,Satisfied
+ORD-7232,2026-04-14,North,Software,Online Store,1001.23,Satisfied,Satisfied
+ORD-6991,2026-04-14,West,Electronics,Direct Sales,1309.05,Neutral,Neutral
+ORD-9884,2026-04-14,South,Electronics,Online Store,1489.3,Satisfied,Neutral
+ORD-3606,2026-04-14,South,Electronics,Online Store,1461.58,Satisfied,Neutral
+ORD-2958,2026-04-15,South,Electronics,Online Store,1397.37,Satisfied,Satisfied
+ORD-7448,2026-04-17,North,Electronics,Online Store,1255.95,Neutral,Satisfied
+ORD-8267,2026-04-17,North,Electronics,Direct Sales,1789.31,Satisfied,Neutral
+ORD-5540,2026-04-17,South,Home Goods,Direct Sales,1139.39,Neutral,Satisfied
+ORD-3081,2026-04-18,South,Electronics,Retail Branch,237.56,Satisfied,Satisfied
+ORD-5462,2026-04-18,South,Electronics,Online Store,1339.67,Satisfied,Satisfied
+ORD-5843,2026-04-18,North,Electronics,Direct Sales,1634.73,Neutral,Neutral
+ORD-8538,2026-04-19,South,Electronics,Online Store,555.12,Satisfied,Satisfied
+ORD-2298,2026-04-20,South,Electronics,Online Store,1782.18,Satisfied,Satisfied
+ORD-6599,2026-04-20,East,Electronics,Retail Branch,336.78,Satisfied,Dissatisfied
+ORD-3609,2026-04-21,South,Clothing,Online Store,1091.17,Satisfied,Satisfied
+ORD-3641,2026-04-21,North,Software,Direct Sales,631.81,Satisfied,Satisfied
+ORD-5615,2026-04-21,North,Home Goods,Online Store,1686.54,Satisfied,Satisfied
+ORD-2036,2026-04-22,South,Clothing,Direct Sales,1519.92,Satisfied,Satisfied
+ORD-6036,2026-04-24,South,Electronics,Online Store,616.18,Dissatisfied,Satisfied
+ORD-4853,2026-04-24,East,Home Goods,Online Store,1111.65,Satisfied,Satisfied
+ORD-3133,2026-04-25,North,Electronics,Online Store,1750.85,Satisfied,Satisfied
+ORD-5949,2026-04-25,South,Electronics,Direct Sales,1337.19,Satisfied,Satisfied
+ORD-4525,2026-04-25,North,Electronics,Online Store,1565.61,Satisfied,Satisfied
+ORD-9344,2026-04-25,West,Electronics,Retail Branch,1329.27,Satisfied,Satisfied
+ORD-6665,2026-04-26,North,Home Goods,Retail Branch,1636.12,Satisfied,Satisfied
+ORD-2441,2026-04-26,South,Electronics,Online Store,633.12,Satisfied,Dissatisfied
+ORD-4011,2026-04-26,South,Clothing,Online Store,1757.63,Satisfied,Neutral
+ORD-5353,2026-04-26,West,Clothing,Retail Branch,300.66,Satisfied,Dissatisfied
+ORD-7949,2026-04-28,West,Electronics,Retail Branch,458.11,Satisfied,Satisfied
+ORD-5005,2026-04-29,West,Clothing,Online Store,1718.08,Neutral,Satisfied
+ORD-3104,2026-05-03,East,Electronics,Direct Sales,690.87,Satisfied,Dissatisfied
+ORD-4826,2026-05-04,South,Electronics,Online Store,1879.42,Satisfied,Satisfied
+ORD-2066,2026-05-05,South,Software,Online Store,1657.24,Neutral,Satisfied
+ORD-4375,2026-05-05,East,Electronics,Retail Branch,1133.03,Satisfied,Satisfied
+ORD-3140,2026-05-06,South,Home Goods,Online Store,1699.82,Dissatisfied,Satisfied
+ORD-2320,2026-05-09,South,Electronics,Online Store,274.67,Neutral,Satisfied
+ORD-5296,2026-05-09,South,Software,Online Store,1576.63,Satisfied,Satisfied
+ORD-7493,2026-05-09,South,Clothing,Retail Branch,1138.35,Satisfied,Satisfied
+ORD-9841,2026-05-10,South,Home Goods,Online Store,489.48,Satisfied,Satisfied
+ORD-8695,2026-05-10,West,Electronics,Direct Sales,521.91,Satisfied,Satisfied
+ORD-3405,2026-05-10,East,Electronics,Online Store,1260.75,Satisfied,Neutral
+ORD-2509,2026-05-10,North,Electronics,Retail Branch,1766.07,Satisfied,Satisfied
+ORD-6550,2026-05-11,South,Electronics,Online Store,183.54,Satisfied,Satisfied
+ORD-3010,2026-05-12,East,Electronics,Retail Branch,635.98,Satisfied,Satisfied
+ORD-5205,2026-05-12,East,Home Goods,Retail Branch,743.3,Dissatisfied,Satisfied
+ORD-5482,2026-05-12,East,Electronics,Online Store,1657.76,Satisfied,Satisfied
+ORD-7247,2026-05-13,South,Software,Online Store,320.2,Satisfied,Neutral
+ORD-5160,2026-05-13,South,Electronics,Online Store,1498.51,Neutral,Dissatisfied
+ORD-4861,2026-05-13,South,Home Goods,Retail Branch,956.15,Satisfied,Dissatisfied
+ORD-4250,2026-05-14,West,Electronics,Online Store,1439.91,Satisfied,Satisfied
+ORD-7728,2026-05-15,North,Home Goods,Direct Sales,428.54,Satisfied,Neutral
+ORD-9886,2026-05-15,South,Electronics,Online Store,146.9,Satisfied,Satisfied
+ORD-5897,2026-05-16,North,Home Goods,Online Store,1723.51,Satisfied,Neutral
+ORD-4093,2026-05-18,West,Electronics,Online Store,509.39,Neutral,Satisfied
+ORD-3334,2026-05-18,West,Software,Online Store,393.99,Satisfied,Satisfied
+ORD-2823,2026-05-18,North,Electronics,Online Store,1241.99,Dissatisfied,Dissatisfied
+ORD-9465,2026-05-18,South,Electronics,Direct Sales,1168.79,Satisfied,Satisfied
+ORD-1493,2026-05-19,North,Clothing,Online Store,1178.53,Satisfied,Satisfied
+ORD-5080,2026-05-19,South,Electronics,Retail Branch,442.46,Neutral,Neutral
+ORD-8400,2026-05-20,West,Electronics,Online Store,729.47,Satisfied,Satisfied
+ORD-7611,2026-05-20,North,Electronics,Retail Branch,336.48,Dissatisfied,Satisfied
+ORD-6059,2026-05-21,East,Electronics,Online Store,994.38,Satisfied,Satisfied
+ORD-3716,2026-05-21,South,Electronics,Direct Sales,1656.88,Satisfied,Neutral
+ORD-4944,2026-05-22,South,Electronics,Direct Sales,195.17,Neutral,Satisfied
+ORD-6702,2026-05-23,South,Software,Retail Branch,268.48,Satisfied,Satisfied
+ORD-8325,2026-05-23,East,Electronics,Direct Sales,1806.47,Neutral,Neutral
+ORD-9134,2026-05-24,North,Electronics,Retail Branch,1364.64,Satisfied,Satisfied
+ORD-5976,2026-05-27,South,Clothing,Direct Sales,1272.12,Satisfied,Neutral
+ORD-6310,2026-05-27,North,Electronics,Retail Branch,998.71,Satisfied,Satisfied
+ORD-1242,2026-05-27,West,Electronics,Online Store,679.74,Satisfied,Neutral
+ORD-6475,2026-05-27,South,Software,Direct Sales,1284.14,Satisfied,Neutral
+ORD-5781,2026-05-28,South,Electronics,Online Store,1578.7,Satisfied,Satisfied
+ORD-2163,2026-05-28,South,Electronics,Online Store,1040.82,Satisfied,Satisfied
+ORD-5717,2026-05-28,South,Electronics,Online Store,1882.67,Neutral,Satisfied
+ORD-9973,2026-05-29,South,Electronics,Retail Branch,144.64,Satisfied,Satisfied
+ORD-2227,2026-05-29,South,Home Goods,Retail Branch,1002.71,Satisfied,Satisfied
+ORD-7517,2026-05-30,South,Electronics,Retail Branch,1948.93,Satisfied,Satisfied
+ORD-4888,2026-05-30,South,Electronics,Retail Branch,423.99,Satisfied,Satisfied
+ORD-6897,2026-05-30,South,Electronics,Retail Branch,484.77,Satisfied,Satisfied
+ORD-7224,2026-05-31,South,Electronics,Retail Branch,1340.33,Satisfied,Satisfied
+ORD-2146,2026-06-01,West,Electronics,Retail Branch,1262.51,Satisfied,Satisfied
+ORD-7293,2026-06-02,North,Electronics,Online Store,169.09,Satisfied,Dissatisfied
+ORD-3271,2026-06-02,South,Electronics,Online Store,337.7,Satisfied,Satisfied
+ORD-8795,2026-06-03,East,Electronics,Direct Sales,276.82,Satisfied,Satisfied
+ORD-7594,2026-06-03,South,Electronics,Retail Branch,328.4,Satisfied,Satisfied
+ORD-1646,2026-06-03,South,Home Goods,Retail Branch,160.18,Satisfied,Neutral
+ORD-5767,2026-06-03,East,Electronics,Online Store,1921.82,Neutral,Neutral
+ORD-2729,2026-06-04,South,Home Goods,Online Store,456.46,Satisfied,Satisfied
+ORD-6801,2026-06-04,North,Electronics,Online Store,1665.29,Satisfied,Satisfied
+ORD-1445,2026-06-05,South,Electronics,Online Store,761.89,Satisfied,Satisfied
+ORD-2982,2026-06-05,North,Electronics,Online Store,1210.49,Neutral,Neutral
+ORD-1730,2026-06-06,East,Electronics,Online Store,227.56,Neutral,Neutral
+ORD-3121,2026-06-07,South,Electronics,Direct Sales,1425.68,Satisfied,Satisfied
+ORD-8341,2026-06-08,East,Home Goods,Online Store,333.79,Neutral,Satisfied
+ORD-8284,2026-06-08,North,Software,Direct Sales,1114.76,Neutral,Satisfied
+ORD-5777,2026-06-09,South,Home Goods,Online Store,687.5,Satisfied,Dissatisfied
+ORD-6821,2026-06-09,West,Software,Online Store,1934.93,Satisfied,Satisfied
+ORD-9251,2026-06-09,South,Electronics,Retail Branch,783.92,Satisfied,Satisfied
+ORD-5539,2026-06-10,North,Electronics,Retail Branch,909.64,Neutral,Satisfied
+ORD-5352,2026-06-11,West,Software,Online Store,1195.74,Satisfied,Satisfied
+ORD-9305,2026-06-13,South,Software,Online Store,1402.92,Satisfied,Satisfied
+ORD-1108,2026-06-14,East,Home Goods,Online Store,1859.89,Neutral,Neutral
+ORD-6159,2026-06-14,West,Electronics,Retail Branch,1475.39,Satisfied,Satisfied
+ORD-9092,2026-06-14,North,Electronics,Direct Sales,1765.85,Satisfied,Neutral
+ORD-6369,2026-06-15,North,Electronics,Retail Branch,1730.78,Satisfied,Satisfied
+ORD-4525,2026-06-17,South,Electronics,Retail Branch,1557.56,Satisfied,Satisfied
+ORD-5023,2026-06-18,North,Clothing,Retail Branch,1726.64,Satisfied,Neutral
+ORD-4954,2026-06-18,South,Clothing,Direct Sales,1177.72,Satisfied,Satisfied
+ORD-9481,2026-06-19,South,Home Goods,Online Store,1775.66,Satisfied,Satisfied
+ORD-8328,2026-06-19,South,Electronics,Online Store,454.62,Satisfied,Satisfied
+ORD-1732,2026-06-20,North,Electronics,Retail Branch,1282.78,Satisfied,Satisfied
+ORD-1376,2026-06-20,South,Electronics,Online Store,901.37,Neutral,Neutral
+ORD-1920,2026-06-20,South,Electronics,Online Store,384.15,Satisfied,Satisfied
+ORD-1402,2026-06-21,South,Home Goods,Online Store,652.32,Satisfied,Neutral
+ORD-1867,2026-06-21,East,Electronics,Retail Branch,927.27,Satisfied,Satisfied
+ORD-7168,2026-06-21,West,Electronics,Direct Sales,530.88,Satisfied,Neutral
+ORD-1267,2026-06-21,North,Electronics,Direct Sales,566.07,Satisfied,Neutral
+ORD-2826,2026-06-21,East,Software,Retail Branch,904.98,Satisfied,Satisfied
+ORD-3986,2026-06-21,South,Electronics,Online Store,357.38,Neutral,Satisfied
+ORD-7052,2026-06-22,East,Electronics,Online Store,1290.62,Satisfied,Dissatisfied
+ORD-7923,2026-06-22,South,Electronics,Retail Branch,801.97,Satisfied,Satisfied
+ORD-7504,2026-06-24,South,Software,Retail Branch,1150.09,Satisfied,Neutral
+ORD-3246,2026-06-24,South,Electronics,Online Store,1174.83,Satisfied,Satisfied
+ORD-3096,2026-06-25,East,Software,Online Store,1138.61,Satisfied,Satisfied
+ORD-6184,2026-06-25,North,Home Goods,Online Store,1932.27,Satisfied,Satisfied
+ORD-3567,2026-06-26,South,Electronics,Online Store,322.85,Neutral,Satisfied
+ORD-4186,2026-06-26,East,Clothing,Online Store,1042.16,Satisfied,Neutral
+ORD-5071,2026-06-27,West,Software,Online Store,484.4,Satisfied,Satisfied
+ORD-9951,2026-06-27,South,Electronics,Retail Branch,1349.2,Satisfied,Neutral
+ORD-2612,2026-06-27,West,Electronics,Online Store,1690.97,Satisfied,Neutral
+ORD-8097,2026-06-28,South,Electronics,Online Store,726.59,Satisfied,Dissatisfied
+ORD-8287,2026-06-28,East,Software,Online Store,593.8,Satisfied,Satisfied
+ORD-7685,2026-06-28,South,Home Goods,Online Store,284.84,Satisfied,Neutral
+ORD-1159,2026-06-28,East,Electronics,Retail Branch,877.85,Satisfied,Dissatisfied
+ORD-6842,2026-06-29,South,Electronics,Direct Sales,1766.94,Dissatisfied,Neutral
+ORD-3087,2026-06-29,South,Electronics,Online Store,614.38,Satisfied,Satisfied
+ORD-9078,2026-06-29,North,Software,Direct Sales,1284.63,Satisfied,Satisfied
+ORD-3730,2026-06-30,West,Electronics,Online Store,223.39,Satisfied,Satisfied
+ORD-2832,2026-06-30,South,Home Goods,Online Store,448.67,Satisfied,Satisfied
+ORD-5992,2026-07-01,South,Software,Online Store,844.97,Satisfied,Satisfied
+ORD-3297,2026-07-01,West,Electronics,Retail Branch,999.12,Satisfied,Satisfied
+ORD-2562,2026-07-02,East,Electronics,Direct Sales,1212.74,Neutral,Satisfied
+ORD-1753,2026-07-03,East,Electronics,Online Store,620.67,Satisfied,Dissatisfied
+ORD-1561,2026-07-03,South,Software,Direct Sales,1533.77,Satisfied,Satisfied
+ORD-1724,2026-07-03,South,Electronics,Retail Branch,754.41,Dissatisfied,Satisfied
+ORD-5689,2026-07-04,North,Home Goods,Retail Branch,1871.9,Satisfied,Satisfied
+ORD-4905,2026-07-04,North,Electronics,Direct Sales,306.02,Dissatisfied,Satisfied
+ORD-4080,2026-07-05,East,Software,Direct Sales,604.6,Satisfied,Satisfied
+ORD-7869,2026-07-05,North,Software,Direct Sales,753.1,Satisfied,Satisfied
+ORD-5750,2026-07-06,North,Home Goods,Retail Branch,458.31,Satisfied,Satisfied
+ORD-4598,2026-07-06,South,Home Goods,Online Store,701.92,Satisfied,Dissatisfied
+ORD-8930,2026-07-06,East,Electronics,Direct Sales,656.01,Neutral,Satisfied
+ORD-4357,2026-07-07,North,Electronics,Retail Branch,660.51,Satisfied,Dissatisfied
+ORD-6735,2026-07-07,West,Electronics,Retail Branch,199.86,Satisfied,Satisfied
+ORD-2408,2026-07-08,West,Electronics,Online Store,350.25,Satisfied,Neutral
+ORD-7800,2026-07-09,North,Software,Direct Sales,1693.88,Satisfied,Satisfied
+ORD-6971,2026-07-09,North,Electronics,Online Store,1800.79,Satisfied,Neutral
+ORD-5761,2026-07-12,North,Electronics,Retail Branch,928.75,Satisfied,Satisfied
+ORD-9764,2026-07-13,West,Clothing,Online Store,156.04,Satisfied,Satisfied
+ORD-2193,2026-07-14,South,Electronics,Online Store,436.38,Satisfied,Satisfied
+ORD-6913,2026-07-14,West,Electronics,Direct Sales,343.44,Satisfied,Dissatisfied
+ORD-7321,2026-07-15,West,Electronics,Retail Branch,1740.83,Neutral,Satisfied
+ORD-9104,2026-07-15,North,Home Goods,Online Store,560.42,Satisfied,Neutral
+ORD-9728,2026-07-16,West,Electronics,Retail Branch,1471.42,Neutral,Satisfied
+ORD-1628,2026-07-16,West,Electronics,Online Store,973.62,Neutral,Dissatisfied
+ORD-5691,2026-07-16,East,Software,Retail Branch,1119.5,Neutral,Satisfied
+ORD-4572,2026-07-16,East,Electronics,Online Store,570.86,Satisfied,Satisfied
+ORD-1767,2026-07-17,South,Electronics,Online Store,859.31,Satisfied,Satisfied
+ORD-2256,2026-07-18,North,Electronics,Online Store,702.25,Satisfied,Satisfied
+ORD-6370,2026-07-19,South,Electronics,Direct Sales,1070.05,Satisfied,Neutral
+ORD-2270,2026-07-19,North,Electronics,Direct Sales,1380.81,Neutral,Satisfied
+ORD-4387,2026-07-19,South,Home Goods,Online Store,1225.71,Satisfied,Satisfied
+ORD-8358,2026-07-20,South,Home Goods,Online Store,1472.36,Satisfied,Neutral
+ORD-3218,2026-07-20,North,Electronics,Online Store,930.53,Satisfied,Dissatisfied
+ORD-3774,2026-07-20,South,Home Goods,Retail Branch,541.52,Satisfied,Neutral
+ORD-5525,2026-07-20,South,Electronics,Retail Branch,1242.71,Satisfied,Satisfied
+ORD-1389,2026-07-20,North,Software,Online Store,228.93,Satisfied,Neutral
+ORD-8769,2026-07-21,West,Software,Retail Branch,866.26,Satisfied,Satisfied
+ORD-1266,2026-07-21,East,Software,Online Store,1768.45,Satisfied,Neutral
+ORD-1332,2026-07-22,East,Electronics,Retail Branch,1673.97,Satisfied,Satisfied
+ORD-2099,2026-07-22,South,Home Goods,Online Store,253.21,Satisfied,Satisfied
+ORD-4639,2026-07-22,South,Electronics,Online Store,582.31,Satisfied,Dissatisfied
+ORD-6450,2026-07-22,South,Home Goods,Direct Sales,629.77,Satisfied,Neutral
+ORD-5267,2026-07-23,East,Software,Online Store,406.67,Satisfied,Satisfied
+ORD-9578,2026-07-24,North,Electronics,Online Store,606.53,Satisfied,Neutral
+ORD-7781,2026-07-24,South,Electronics,Online Store,941.45,Satisfied,Satisfied
+ORD-2913,2026-07-24,North,Electronics,Online Store,553.16,Satisfied,Satisfied
+ORD-4711,2026-07-24,East,Electronics,Retail Branch,843.54,Satisfied,Neutral
+ORD-6519,2026-07-24,South,Clothing,Online Store,453.71,Neutral,Satisfied
+ORD-7080,2026-07-25,South,Clothing,Direct Sales,927.18,Satisfied,Neutral
+ORD-4275,2026-07-26,South,Electronics,Online Store,1526.23,Satisfied,Satisfied
+ORD-8898,2026-07-27,East,Electronics,Retail Branch,1103.87,Satisfied,Dissatisfied
+ORD-6149,2026-07-27,North,Home Goods,Online Store,487.7,Satisfied,Neutral
+ORD-7012,2026-07-28,North,Electronics,Online Store,1349.92,Satisfied,Satisfied
+ORD-5323,2026-07-28,South,Electronics,Online Store,1815.49,Satisfied,Satisfied
+ORD-4366,2026-07-31,South,Electronics,Direct Sales,803.92,Satisfied,Satisfied
+ORD-2117,2026-08-01,South,Electronics,Online Store,1663.26,Satisfied,Neutral
+ORD-1758,2026-08-01,South,Electronics,Online Store,343.46,Satisfied,Satisfied
+ORD-9652,2026-08-01,South,Electronics,Online Store,667.45,Satisfied,Dissatisfied
+ORD-1088,2026-08-01,South,Electronics,Retail Branch,683.92,Neutral,Satisfied
+ORD-1974,2026-08-01,West,Software,Online Store,1065.77,Satisfied,Neutral
+ORD-9265,2026-08-01,West,Electronics,Direct Sales,773.84,Satisfied,Neutral
+ORD-4324,2026-08-01,South,Home Goods,Retail Branch,381.69,Satisfied,Satisfied
+ORD-6101,2026-08-02,North,Electronics,Retail Branch,1911.17,Satisfied,Satisfied
+ORD-2205,2026-08-02,South,Home Goods,Retail Branch,1706.25,Satisfied,Satisfied
+ORD-6117,2026-08-03,East,Electronics,Retail Branch,373.38,Satisfied,Satisfied
+ORD-2185,2026-08-03,South,Software,Online Store,267.22,Satisfied,Satisfied
+ORD-9309,2026-08-03,East,Home Goods,Retail Branch,1655.18,Satisfied,Satisfied
+ORD-7996,2026-08-04,South,Software,Direct Sales,1010.11,Satisfied,Satisfied
+ORD-6445,2026-08-04,West,Home Goods,Online Store,683.31,Satisfied,Neutral
+ORD-9405,2026-08-04,North,Electronics,Online Store,1940.88,Satisfied,Satisfied
+ORD-7097,2026-08-05,North,Software,Retail Branch,483.41,Satisfied,Satisfied
+ORD-4371,2026-08-05,East,Electronics,Retail Branch,978.5,Satisfied,Neutral
+ORD-2923,2026-08-05,West,Clothing,Retail Branch,1420.8,Satisfied,Satisfied
+ORD-2226,2026-08-06,North,Electronics,Direct Sales,462.55,Satisfied,Neutral
+ORD-6806,2026-08-07,South,Electronics,Direct Sales,508.93,Satisfied,Neutral
+ORD-5419,2026-08-07,South,Clothing,Online Store,589.73,Satisfied,Satisfied
+ORD-5022,2026-08-08,South,Home Goods,Direct Sales,1592.0,Satisfied,Satisfied
+ORD-6687,2026-08-11,South,Home Goods,Online Store,1273.76,Satisfied,Dissatisfied
+ORD-8446,2026-08-11,South,Electronics,Online Store,1270.72,Satisfied,Neutral
+ORD-7996,2026-08-11,South,Electronics,Retail Branch,173.34,Dissatisfied,Satisfied
+ORD-8835,2026-08-11,West,Home Goods,Retail Branch,1484.05,Dissatisfied,Satisfied
+ORD-3938,2026-08-12,South,Electronics,Direct Sales,691.32,Satisfied,Satisfied
+ORD-2896,2026-08-12,South,Electronics,Online Store,1763.63,Neutral,Satisfied
+ORD-8371,2026-08-12,North,Electronics,Retail Branch,509.47,Dissatisfied,Satisfied
+ORD-7261,2026-08-13,West,Electronics,Retail Branch,1139.22,Satisfied,Satisfied
+ORD-7013,2026-08-13,West,Electronics,Retail Branch,1311.89,Satisfied,Satisfied
+ORD-9376,2026-08-14,West,Electronics,Direct Sales,1668.58,Satisfied,Satisfied
+ORD-2146,2026-08-14,South,Electronics,Online Store,288.18,Satisfied,Satisfied
+ORD-9482,2026-08-14,South,Electronics,Online Store,971.07,Neutral,Satisfied
+ORD-8040,2026-08-15,South,Electronics,Retail Branch,812.86,Satisfied,Satisfied
+ORD-3366,2026-08-15,East,Software,Online Store,1565.85,Satisfied,Satisfied
+ORD-3532,2026-08-16,North,Electronics,Retail Branch,777.35,Neutral,Satisfied
+ORD-1040,2026-08-16,East,Software,Direct Sales,1871.41,Satisfied,Satisfied
+ORD-8511,2026-08-17,South,Electronics,Online Store,175.5,Satisfied,Satisfied
+ORD-6018,2026-08-17,South,Home Goods,Online Store,603.52,Satisfied,Satisfied
+ORD-6176,2026-08-18,West,Electronics,Online Store,851.15,Neutral,Neutral
+ORD-3496,2026-08-20,East,Home Goods,Direct Sales,1315.09,Satisfied,Dissatisfied
+ORD-2121,2026-08-20,South,Electronics,Direct Sales,513.43,Neutral,Satisfied
+ORD-1348,2026-08-21,West,Home Goods,Retail Branch,602.61,Satisfied,Satisfied
+ORD-7796,2026-08-21,East,Electronics,Online Store,1650.34,Satisfied,Satisfied
+ORD-1154,2026-08-22,East,Home Goods,Online Store,1374.52,Satisfied,Satisfied
+ORD-7857,2026-08-22,South,Electronics,Online Store,564.76,Satisfied,Neutral
+ORD-7113,2026-08-23,North,Software,Online Store,231.79,Satisfied,Satisfied
+ORD-9441,2026-08-23,South,Electronics,Online Store,165.61,Satisfied,Satisfied
+ORD-4201,2026-08-24,North,Software,Retail Branch,409.56,Satisfied,Dissatisfied
+ORD-5886,2026-08-24,South,Electronics,Online Store,760.81,Satisfied,Neutral
+ORD-3792,2026-08-25,South,Software,Online Store,1885.04,Satisfied,Neutral
+ORD-3753,2026-08-25,South,Software,Online Store,1450.39,Satisfied,Satisfied
+ORD-8065,2026-08-26,South,Electronics,Online Store,1692.55,Satisfied,Dissatisfied
+ORD-1436,2026-08-26,South,Home Goods,Retail Branch,388.63,Satisfied,Satisfied
+ORD-4967,2026-08-26,South,Electronics,Online Store,647.59,Satisfied,Neutral
+ORD-1279,2026-08-27,South,Home Goods,Online Store,892.69,Satisfied,Satisfied
+ORD-1296,2026-08-28,South,Electronics,Retail Branch,1615.26,Satisfied,Satisfied
+ORD-7736,2026-08-28,North,Electronics,Retail Branch,1358.7,Satisfied,Neutral
+ORD-8876,2026-08-28,South,Electronics,Retail Branch,1000.51,Satisfied,Satisfied
+ORD-7851,2026-08-29,South,Electronics,Retail Branch,742.81,Satisfied,Satisfied
+ORD-7491,2026-08-31,East,Electronics,Retail Branch,793.47,Satisfied,Satisfied
+ORD-5339,2026-08-31,East,Electronics,Retail Branch,238.02,Satisfied,Satisfied
+ORD-2490,2026-09-01,South,Electronics,Online Store,1333.43,Satisfied,Satisfied
+ORD-7646,2026-09-01,West,Electronics,Online Store,1104.35,Satisfied,Satisfied
+ORD-3107,2026-09-01,South,Electronics,Online Store,1043.87,Satisfied,Neutral
+ORD-5516,2026-09-02,South,Clothing,Online Store,1904.09,Satisfied,Satisfied
+ORD-6173,2026-09-04,West,Clothing,Online Store,844.77,Satisfied,Satisfied
+ORD-7964,2026-09-05,North,Home Goods,Direct Sales,1343.36,Satisfied,Dissatisfied
+ORD-6897,2026-09-06,South,Electronics,Online Store,1172.95,Satisfied,Satisfied
+ORD-7869,2026-09-06,South,Electronics,Online Store,717.56,Satisfied,Satisfied
+ORD-5966,2026-09-07,South,Clothing,Retail Branch,807.68,Satisfied,Neutral
+ORD-4259,2026-09-08,North,Software,Online Store,812.23,Satisfied,Satisfied
+ORD-9925,2026-09-08,North,Home Goods,Retail Branch,708.98,Satisfied,Satisfied
+ORD-3588,2026-09-09,East,Electronics,Online Store,544.71,Satisfied,Satisfied
+ORD-3448,2026-09-10,East,Software,Online Store,564.31,Satisfied,Satisfied
+ORD-4504,2026-09-10,North,Electronics,Retail Branch,528.17,Satisfied,Neutral
+ORD-2780,2026-09-11,North,Electronics,Direct Sales,1032.49,Satisfied,Neutral
+ORD-2513,2026-09-12,South,Home Goods,Online Store,1441.72,Satisfied,Satisfied
+ORD-5558,2026-09-14,South,Electronics,Online Store,510.85,Satisfied,Satisfied
+ORD-6073,2026-09-14,South,Software,Retail Branch,521.77,Satisfied,Neutral
+ORD-2874,2026-09-14,East,Software,Retail Branch,287.59,Satisfied,Satisfied
+ORD-5228,2026-09-15,South,Electronics,Retail Branch,1691.21,Satisfied,Satisfied
+ORD-4943,2026-09-16,East,Electronics,Online Store,1545.7,Satisfied,Satisfied
+ORD-8261,2026-09-18,South,Electronics,Online Store,650.77,Satisfied,Satisfied
+ORD-1553,2026-09-19,North,Clothing,Retail Branch,911.62,Neutral,Satisfied
+ORD-9880,2026-09-19,East,Clothing,Online Store,1230.26,Satisfied,Neutral
+ORD-3558,2026-09-20,North,Electronics,Retail Branch,1694.16,Satisfied,Satisfied
+ORD-8691,2026-09-20,North,Software,Retail Branch,1389.45,Satisfied,Satisfied
+ORD-4701,2026-09-21,South,Electronics,Retail Branch,377.26,Satisfied,Neutral
+ORD-6730,2026-09-22,East,Electronics,Online Store,698.08,Neutral,Neutral
+ORD-5741,2026-09-22,South,Home Goods,Online Store,1308.87,Satisfied,Satisfied
+ORD-1344,2026-09-23,West,Electronics,Online Store,746.82,Satisfied,Neutral
+ORD-3728,2026-09-23,East,Electronics,Online Store,1414.2,Satisfied,Satisfied
+ORD-8107,2026-09-23,South,Clothing,Online Store,1872.52,Dissatisfied,Satisfied
+ORD-1520,2026-09-24,West,Electronics,Direct Sales,985.68,Neutral,Dissatisfied
+ORD-1529,2026-09-24,South,Electronics,Online Store,369.89,Satisfied,Satisfied
+ORD-9192,2026-09-24,West,Home Goods,Retail Branch,637.52,Neutral,Dissatisfied
+ORD-3801,2026-09-25,South,Electronics,Online Store,239.13,Satisfied,Satisfied
+ORD-7796,2026-09-25,South,Electronics,Online Store,989.96,Satisfied,Satisfied
+ORD-1999,2026-09-25,South,Clothing,Retail Branch,279.93,Satisfied,Satisfied
+ORD-8649,2026-09-27,South,Electronics,Retail Branch,1545.61,Satisfied,Satisfied
+ORD-6443,2026-09-27,South,Electronics,Online Store,177.08,Satisfied,Satisfied
+ORD-6682,2026-09-27,South,Electronics,Direct Sales,1062.85,Satisfied,Satisfied
+ORD-2112,2026-09-27,West,Home Goods,Online Store,906.11,Satisfied,Satisfied
+ORD-6173,2026-10-01,West,Electronics,Direct Sales,277.52,Neutral,Satisfied
+ORD-5231,2026-10-01,North,Software,Retail Branch,180.22,Neutral,Satisfied
+ORD-5685,2026-10-02,South,Clothing,Online Store,1091.11,Satisfied,Satisfied
+ORD-1050,2026-10-02,South,Electronics,Online Store,1710.33,Satisfied,Neutral
+ORD-1821,2026-10-03,East,Clothing,Direct Sales,232.59,Satisfied,Satisfied
+ORD-8982,2026-10-05,West,Electronics,Retail Branch,1912.28,Satisfied,Neutral
+ORD-1380,2026-10-05,North,Home Goods,Online Store,615.57,Satisfied,Dissatisfied
+ORD-4273,2026-10-06,South,Electronics,Retail Branch,661.03,Satisfied,Satisfied
+ORD-6937,2026-10-06,West,Clothing,Direct Sales,436.15,Satisfied,Neutral
+ORD-7501,2026-10-06,South,Electronics,Online Store,382.75,Satisfied,Neutral
+ORD-4053,2026-10-06,South,Electronics,Retail Branch,1800.79,Satisfied,Satisfied
+ORD-8198,2026-10-08,East,Clothing,Online Store,816.12,Satisfied,Neutral
+ORD-6735,2026-10-09,North,Clothing,Direct Sales,1135.93,Satisfied,Dissatisfied
+ORD-7191,2026-10-09,East,Electronics,Online Store,1421.56,Satisfied,Satisfied
+ORD-2436,2026-10-10,South,Clothing,Online Store,1244.71,Satisfied,Satisfied
+ORD-7377,2026-10-10,East,Electronics,Retail Branch,307.46,Satisfied,Neutral
+ORD-4738,2026-10-11,South,Electronics,Retail Branch,1166.13,Satisfied,Satisfied
+ORD-9814,2026-10-12,South,Clothing,Direct Sales,1733.01,Satisfied,Satisfied
+ORD-9846,2026-10-12,South,Software,Online Store,1285.51,Satisfied,Satisfied
+ORD-7113,2026-10-12,North,Software,Online Store,496.52,Satisfied,Neutral
+ORD-1751,2026-10-12,South,Electronics,Online Store,1599.03,Satisfied,Satisfied
+ORD-8809,2026-10-14,North,Electronics,Retail Branch,1219.67,Satisfied,Neutral
+ORD-5600,2026-10-15,East,Software,Online Store,370.33,Satisfied,Satisfied
+ORD-9451,2026-10-16,South,Electronics,Direct Sales,1522.69,Satisfied,Neutral
+ORD-6581,2026-10-16,East,Electronics,Online Store,310.42,Satisfied,Dissatisfied
+ORD-7405,2026-10-17,South,Home Goods,Online Store,724.6,Neutral,Dissatisfied
+ORD-8877,2026-10-17,North,Electronics,Direct Sales,136.85,Satisfied,Neutral
+ORD-2115,2026-10-20,North,Electronics,Online Store,178.82,Satisfied,Neutral
+ORD-6356,2026-10-21,North,Electronics,Retail Branch,1304.11,Satisfied,Satisfied
+ORD-9332,2026-10-21,South,Software,Online Store,1317.74,Dissatisfied,Dissatisfied
+ORD-3882,2026-10-21,West,Software,Online Store,371.16,Satisfied,Satisfied
+ORD-2888,2026-10-21,North,Clothing,Direct Sales,996.02,Satisfied,Dissatisfied
+ORD-3524,2026-10-22,South,Electronics,Retail Branch,1932.61,Satisfied,Satisfied
+ORD-9103,2026-10-22,West,Electronics,Online Store,844.03,Satisfied,Neutral
+ORD-3590,2026-10-22,South,Electronics,Direct Sales,1325.33,Dissatisfied,Satisfied
+ORD-8619,2026-10-22,South,Home Goods,Retail Branch,354.73,Satisfied,Satisfied
+ORD-4303,2026-10-22,North,Home Goods,Online Store,1916.23,Satisfied,Satisfied
+ORD-6201,2026-10-23,South,Home Goods,Online Store,1209.69,Satisfied,Satisfied
+ORD-8453,2026-10-23,West,Electronics,Retail Branch,356.25,Satisfied,Satisfied
+ORD-2906,2026-10-23,East,Software,Retail Branch,1697.05,Satisfied,Satisfied
+ORD-7656,2026-10-23,North,Software,Direct Sales,601.58,Satisfied,Satisfied
+ORD-5613,2026-10-24,West,Software,Direct Sales,1763.25,Satisfied,Satisfied
+ORD-7479,2026-10-25,North,Electronics,Online Store,578.0,Satisfied,Satisfied
+ORD-4834,2026-10-25,East,Electronics,Online Store,685.51,Satisfied,Satisfied
+ORD-1491,2026-10-26,West,Software,Retail Branch,654.51,Neutral,Satisfied
+ORD-6968,2026-10-26,West,Software,Online Store,226.96,Satisfied,Neutral
+ORD-1985,2026-10-26,North,Home Goods,Online Store,1924.69,Satisfied,Neutral
+ORD-6444,2026-10-27,North,Electronics,Online Store,1280.68,Satisfied,Dissatisfied
+ORD-2166,2026-10-28,West,Electronics,Online Store,516.05,Satisfied,Satisfied
+ORD-7124,2026-10-28,West,Electronics,Retail Branch,1846.41,Satisfied,Satisfied
+ORD-2333,2026-10-29,West,Electronics,Direct Sales,998.13,Satisfied,Dissatisfied
+ORD-1586,2026-10-29,North,Home Goods,Direct Sales,1088.66,Satisfied,Satisfied
+ORD-8054,2026-10-30,East,Electronics,Retail Branch,1161.66,Satisfied,Satisfied
+ORD-7383,2026-10-30,South,Electronics,Retail Branch,1649.84,Satisfied,Satisfied
+ORD-5843,2026-10-30,South,Electronics,Retail Branch,560.46,Neutral,Satisfied
+ORD-3964,2026-10-30,North,Electronics,Retail Branch,1504.94,Neutral,Satisfied
+ORD-2374,2026-11-01,North,Home Goods,Online Store,356.68,Satisfied,Satisfied
+ORD-7589,2026-11-01,South,Electronics,Direct Sales,1835.97,Satisfied,Satisfied
+ORD-7324,2026-11-01,South,Electronics,Direct Sales,1620.34,Satisfied,Satisfied
+ORD-6270,2026-11-02,South,Electronics,Retail Branch,332.71,Satisfied,Satisfied
+ORD-9019,2026-11-02,South,Electronics,Direct Sales,1560.11,Satisfied,Satisfied
+ORD-1391,2026-11-04,South,Electronics,Retail Branch,464.89,Satisfied,Satisfied
+ORD-2003,2026-11-04,East,Electronics,Direct Sales,1463.27,Neutral,Satisfied
+ORD-9150,2026-11-05,North,Electronics,Retail Branch,1549.49,Satisfied,Dissatisfied
+ORD-8297,2026-11-05,West,Electronics,Direct Sales,931.95,Neutral,Satisfied
+ORD-1197,2026-11-05,South,Clothing,Online Store,1157.77,Satisfied,Satisfied
+ORD-2178,2026-11-05,West,Electronics,Online Store,422.74,Neutral,Dissatisfied
+ORD-3988,2026-11-07,West,Electronics,Direct Sales,850.2,Satisfied,Dissatisfied
+ORD-1452,2026-11-08,North,Clothing,Retail Branch,650.5,Neutral,Neutral
+ORD-5372,2026-11-09,North,Electronics,Retail Branch,981.47,Satisfied,Neutral
+ORD-5777,2026-11-09,East,Electronics,Direct Sales,875.34,Neutral,Neutral
+ORD-4527,2026-11-10,North,Electronics,Online Store,722.51,Satisfied,Satisfied
+ORD-4885,2026-11-10,South,Electronics,Online Store,1306.81,Satisfied,Satisfied
+ORD-7612,2026-11-10,East,Electronics,Retail Branch,197.87,Satisfied,Dissatisfied
+ORD-9496,2026-11-11,South,Electronics,Online Store,1734.74,Dissatisfied,Neutral
+ORD-8473,2026-11-12,West,Electronics,Online Store,1427.97,Satisfied,Satisfied
+ORD-2174,2026-11-12,East,Home Goods,Online Store,1751.83,Dissatisfied,Satisfied
+ORD-2904,2026-11-13,West,Electronics,Retail Branch,1608.82,Satisfied,Satisfied
+ORD-7844,2026-11-13,South,Electronics,Direct Sales,1681.83,Satisfied,Satisfied
+ORD-4939,2026-11-16,South,Electronics,Online Store,367.46,Neutral,Satisfied
+ORD-2425,2026-11-17,North,Electronics,Online Store,1032.66,Satisfied,Dissatisfied
+ORD-5695,2026-11-17,South,Electronics,Direct Sales,1908.39,Satisfied,Satisfied
+ORD-4416,2026-11-18,South,Electronics,Retail Branch,567.5,Dissatisfied,Dissatisfied
+ORD-3082,2026-11-18,South,Clothing,Retail Branch,186.35,Satisfied,Satisfied
+ORD-4611,2026-11-21,North,Electronics,Direct Sales,688.5,Satisfied,Satisfied
+ORD-9220,2026-11-21,West,Electronics,Online Store,438.52,Satisfied,Satisfied
+ORD-9487,2026-11-22,South,Clothing,Online Store,490.22,Satisfied,Satisfied
+ORD-6601,2026-11-22,North,Electronics,Direct Sales,924.37,Dissatisfied,Satisfied
+ORD-6672,2026-11-22,North,Electronics,Retail Branch,1258.0,Satisfied,Satisfied
+ORD-5503,2026-11-22,South,Home Goods,Online Store,1779.1,Satisfied,Satisfied
+ORD-8338,2026-11-23,North,Software,Online Store,680.32,Satisfied,Satisfied
+ORD-4524,2026-11-24,South,Electronics,Online Store,834.96,Satisfied,Satisfied
+ORD-3469,2026-11-24,South,Software,Online Store,1400.54,Satisfied,Satisfied
+ORD-8039,2026-11-25,North,Software,Online Store,184.46,Neutral,Satisfied
+ORD-8117,2026-11-25,South,Clothing,Retail Branch,817.21,Satisfied,Satisfied
+ORD-2161,2026-11-26,North,Electronics,Online Store,1255.18,Neutral,Dissatisfied
+ORD-3401,2026-11-26,North,Home Goods,Online Store,954.27,Satisfied,Neutral
+ORD-4102,2026-11-26,West,Clothing,Retail Branch,1099.85,Satisfied,Satisfied
+ORD-2449,2026-11-27,South,Clothing,Direct Sales,928.73,Satisfied,Satisfied
+ORD-2422,2026-11-28,North,Electronics,Online Store,479.46,Satisfied,Neutral
+ORD-7824,2026-11-28,South,Electronics,Retail Branch,1681.16,Satisfied,Satisfied
+ORD-9947,2026-11-28,South,Electronics,Online Store,1855.92,Satisfied,Satisfied
+ORD-4065,2026-12-01,South,Software,Online Store,1077.21,Neutral,Satisfied
+ORD-8008,2026-12-01,North,Software,Online Store,1819.64,Satisfied,Satisfied
+ORD-9026,2026-12-01,South,Electronics,Online Store,1212.81,Satisfied,Satisfied
+ORD-1563,2026-12-01,South,Electronics,Direct Sales,1115.25,Satisfied,Satisfied
+ORD-8648,2026-12-01,South,Clothing,Online Store,1340.06,Satisfied,Satisfied
+ORD-3962,2026-12-02,North,Home Goods,Retail Branch,1425.61,Neutral,Satisfied
+ORD-8287,2026-12-03,South,Electronics,Online Store,373.42,Satisfied,Satisfied
+ORD-8033,2026-12-04,South,Electronics,Online Store,977.23,Satisfied,Satisfied
+ORD-9958,2026-12-04,South,Electronics,Online Store,192.02,Satisfied,Neutral
+ORD-5566,2026-12-04,West,Electronics,Online Store,1366.13,Satisfied,Dissatisfied
+ORD-3783,2026-12-04,South,Home Goods,Retail Branch,1457.02,Neutral,Neutral
+ORD-8539,2026-12-04,North,Electronics,Online Store,1414.41,Satisfied,Satisfied
+ORD-3260,2026-12-05,West,Electronics,Online Store,1235.1,Dissatisfied,Satisfied
+ORD-2132,2026-12-06,South,Home Goods,Online Store,223.66,Satisfied,Neutral
+ORD-4442,2026-12-06,East,Electronics,Retail Branch,722.61,Neutral,Satisfied
+ORD-3101,2026-12-06,South,Electronics,Direct Sales,305.24,Neutral,Satisfied
+ORD-6851,2026-12-07,West,Electronics,Retail Branch,1797.0,Satisfied,Satisfied
+ORD-3722,2026-12-07,East,Home Goods,Online Store,429.22,Satisfied,Satisfied
+ORD-2505,2026-12-08,South,Software,Online Store,593.6,Satisfied,Satisfied
+ORD-3008,2026-12-08,East,Electronics,Online Store,906.01,Satisfied,Neutral
+ORD-3195,2026-12-09,North,Electronics,Retail Branch,1051.54,Satisfied,Satisfied
+ORD-2882,2026-12-10,West,Electronics,Direct Sales,485.61,Satisfied,Satisfied
+ORD-6096,2026-12-10,South,Electronics,Direct Sales,1338.43,Satisfied,Satisfied
+ORD-3674,2026-12-10,South,Software,Online Store,196.13,Satisfied,Satisfied
+ORD-7768,2026-12-11,South,Electronics,Direct Sales,1468.68,Neutral,Neutral
+ORD-7216,2026-12-12,West,Electronics,Online Store,749.6,Satisfied,Satisfied
+ORD-6041,2026-12-12,North,Home Goods,Online Store,768.6,Neutral,Dissatisfied
+ORD-2604,2026-12-12,South,Electronics,Online Store,1372.73,Satisfied,Satisfied
+ORD-4505,2026-12-12,South,Software,Online Store,1566.53,Neutral,Dissatisfied
+ORD-3127,2026-12-12,North,Electronics,Retail Branch,812.81,Neutral,Satisfied
+ORD-1933,2026-12-12,East,Clothing,Retail Branch,1006.69,Satisfied,Dissatisfied
+ORD-4867,2026-12-12,South,Electronics,Retail Branch,918.72,Satisfied,Neutral
+ORD-5391,2026-12-13,North,Electronics,Online Store,1308.95,Satisfied,Satisfied
+ORD-9629,2026-12-13,West,Electronics,Retail Branch,169.89,Dissatisfied,Satisfied
+ORD-9888,2026-12-15,East,Software,Retail Branch,1262.3,Satisfied,Satisfied
+ORD-6531,2026-12-16,South,Electronics,Online Store,1138.47,Satisfied,Satisfied
+ORD-5514,2026-12-16,West,Electronics,Retail Branch,1827.44,Satisfied,Satisfied
+ORD-6751,2026-12-16,West,Electronics,Online Store,790.94,Satisfied,Satisfied
+ORD-8992,2026-12-16,North,Electronics,Retail Branch,1186.19,Satisfied,Satisfied
+ORD-4939,2026-12-17,North,Home Goods,Direct Sales,1347.75,Satisfied,Neutral
+ORD-2851,2026-12-18,South,Home Goods,Online Store,833.84,Satisfied,Satisfied
+ORD-7195,2026-12-18,South,Electronics,Retail Branch,871.75,Satisfied,Satisfied
+ORD-9499,2026-12-18,West,Home Goods,Retail Branch,526.09,Satisfied,Satisfied
+ORD-7094,2026-12-18,South,Electronics,Online Store,1689.08,Satisfied,Satisfied
+ORD-9260,2026-12-19,East,Electronics,Retail Branch,723.0,Satisfied,Satisfied
+ORD-2291,2026-12-19,South,Electronics,Direct Sales,1100.54,Satisfied,Satisfied
+ORD-7521,2026-12-19,South,Electronics,Direct Sales,1755.58,Satisfied,Satisfied
+ORD-4266,2026-12-20,East,Electronics,Online Store,1342.94,Satisfied,Satisfied
+ORD-8106,2026-12-20,South,Software,Online Store,517.95,Dissatisfied,Satisfied
+ORD-3356,2026-12-20,East,Electronics,Online Store,1747.38,Satisfied,Dissatisfied
+ORD-3060,2026-12-21,South,Clothing,Online Store,949.07,Satisfied,Dissatisfied
+ORD-6792,2026-12-21,South,Home Goods,Retail Branch,1250.19,Neutral,Satisfied
+ORD-7401,2026-12-21,South,Clothing,Direct Sales,343.14,Satisfied,Satisfied
+ORD-1498,2026-12-21,East,Electronics,Direct Sales,532.58,Satisfied,Satisfied
+ORD-6181,2026-12-22,South,Electronics,Retail Branch,960.68,Satisfied,Satisfied
+ORD-7817,2026-12-22,South,Electronics,Online Store,1250.72,Satisfied,Satisfied
+ORD-8533,2026-12-22,South,Electronics,Online Store,273.36,Satisfied,Satisfied
+ORD-3039,2026-12-23,West,Electronics,Online Store,514.99,Satisfied,Satisfied
+ORD-9259,2026-12-25,South,Electronics,Retail Branch,1352.43,Satisfied,Satisfied
+ORD-2893,2026-12-27,South,Software,Direct Sales,539.01,Satisfied,Satisfied
+ORD-1924,2026-12-28,North,Electronics,Retail Branch,1641.54,Neutral,Satisfied
+ORD-1667,2026-12-28,North,Electronics,Direct Sales,1768.81,Satisfied,Neutral
+ORD-5709,2026-12-29,South,Electronics,Direct Sales,1081.73,Satisfied,Neutral
+ORD-5998,2026-12-29,West,Electronics,Online Store,1860.71,Neutral,Satisfied
+ORD-9113,2026-12-30,South,Electronics,Online Store,1708.05,Satisfied,Satisfied
+ORD-9516,2026-12-30,North,Home Goods,Retail Branch,1049.38,Neutral,Neutral
+ORD-9413,2026-12-30,North,Home Goods,Direct Sales,876.04,Neutral,Neutral
