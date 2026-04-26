@@ -856,6 +856,13 @@ if file_current is not None:
                             except Exception:
                                 return label
 
+                        def safe_reindex(counts_df, col, all_labels):
+                            """Reindex without crashing on duplicate index values."""
+                            counts_df = counts_df.drop_duplicates(subset=[col])
+                            counts_df = counts_df.set_index(col).reindex(all_labels, fill_value=0).reset_index()
+                            counts_df.columns = [col, "Count"]
+                            return counts_df
+
                         st.markdown('<div class="chart-card">', unsafe_allow_html=True)
                         fig = None
 
@@ -863,12 +870,15 @@ if file_current is not None:
                             subtitle = "Binned ranges · count" if is_numeric_col else "Response count per value"
                             if is_comparing:
                                 card(f"{x_axis} — Count", f"Current vs Previous — {subtitle}")
-                                cur_c = bin_col_series(df_current, x_axis, n_bins); cur_c["Period"] = "Current"
-                                prev_c = bin_col_series(df_previous, x_axis, n_bins); prev_c["Period"] = "Previous"
+                                # Use cleaned df split by Period tag (not raw df_current/df_previous)
+                                df_cur_clean  = df[df["Period"] == "Current"]
+                                df_prev_clean = df[df["Period"] == "Previous"]
+                                cur_c  = bin_col_series(df_cur_clean,  x_axis, n_bins)
+                                prev_c = bin_col_series(df_prev_clean, x_axis, n_bins)
                                 all_labels_set = set(cur_c[x_axis]) | set(prev_c[x_axis])
                                 all_labels = sorted(all_labels_set, key=numeric_sort_key) if is_numeric_col else sorted(all_labels_set)
-                                cur_c = cur_c.set_index(x_axis).reindex(all_labels, fill_value=0).reset_index(); cur_c["Period"] = "Current"
-                                prev_c = prev_c.set_index(x_axis).reindex(all_labels, fill_value=0).reset_index(); prev_c["Period"] = "Previous"
+                                cur_c  = safe_reindex(cur_c,  x_axis, all_labels); cur_c["Period"]  = "Current"
+                                prev_c = safe_reindex(prev_c, x_axis, all_labels); prev_c["Period"] = "Previous"
                                 chart_data = pd.concat([cur_c, prev_c], ignore_index=True)
                                 fig = px.line(chart_data, x=x_axis, y="Count", color="Period", markers=True,
                                               category_orders={x_axis: all_labels},
@@ -1030,17 +1040,12 @@ if file_current is not None:
 
                     if ct_display == "Grouped Bar":
                         # ── Top-N control to avoid overcrowding ──
-                        # Only show the slider if there are more than 5 categories
-                        if len(bd_order) > 5:
-                            top_n = st.slider(
-                                "Show top N breakdown values (by total count):",
-                                min_value=5, max_value=min(50, len(bd_order)),
-                                value=min(15, len(bd_order)),
-                                key="ct_topn",
-                            )
-                        else:
-                            top_n = len(bd_order) # Automatically show all of them if 5 or fewer
-                            
+                        top_n = st.slider(
+                            "Show top N breakdown values (by total count):",
+                            min_value=5, max_value=min(50, len(bd_order)),
+                            value=min(15, len(bd_order)),
+                            key="ct_topn",
+                        )
                         bd_order_trimmed = bd_order[:top_n]
                         cross_trimmed = cross[cross[breakdown_col].isin(bd_order_trimmed)]
 
