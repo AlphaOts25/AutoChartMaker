@@ -728,55 +728,16 @@ if file_current is not None:
         df[fr_col] = df[fr_col].replace(fr_find, fr_replace)
         st.session_state.cleaning_log.append(f"Find & Replace in '{fr_col}': '{fr_find}'→'{fr_replace}' ({count} cells)")
 
-    # ── Merge Duplicate Values — populate UI ──
-    merge_cat_cols = list(df.select_dtypes(include="object").columns)
-    merge_cat_cols = [c for c in merge_cat_cols if c != "Period"]
-    with merge_col_ph:
-        merge_sel_col = st.selectbox("Column to merge values in:", merge_cat_cols, key="merge_col_sel")
-    merge_unique_vals = sorted(df[merge_sel_col].dropna().unique().tolist()) if merge_sel_col in df.columns else []
-    with merge_vals_ph:
-        merge_selected_vals = st.multiselect(
-            "Select values to consolidate:",
-            merge_unique_vals,
-            key="merge_vals_sel",
-            help="Pick all the variant spellings / duplicates you want to collapse into one.",
-        )
-    if merge_selected_vals and merge_sel_col in df.columns:
-        freq_counts = df[merge_sel_col].value_counts()
-        suggested = max(merge_selected_vals, key=lambda v: freq_counts.get(v, 0))
-    else:
-        suggested = ""
-    with merge_canon_ph:
-        merge_canonical = st.text_input(
-            "Canonical (unified) name:",
-            value=suggested,
-            key="merge_canon_input",
-            help="All selected values will be replaced with this name.",
-        )
-    with merge_btn_ph:
-        if st.button("➕ Add Merge Rule", key="add_merge_rule"):
-            if merge_sel_col and merge_selected_vals and merge_canonical.strip():
-                new_rule = {
-                    "col": merge_sel_col,
-                    "values": merge_selected_vals,
-                    "canonical": merge_canonical.strip(),
-                }
-                st.session_state.value_merge_rules.append(new_rule)
-                st.session_state.cleaning_log.append(
-                    f"Merge rule: [{', '.join(merge_selected_vals)}] → '{merge_canonical.strip()}' in '{merge_sel_col}'"
-                )
-                st.rerun()
-            else:
-                st.warning("Select a column, at least one value, and enter a canonical name.")
-
-    # ── Apply all merge rules to df ──
-    for rule in st.session_state.value_merge_rules:
-        col_r, vals_r, canon_r = rule["col"], rule["values"], rule["canonical"]
-        if col_r in df.columns:
-            df[col_r] = df[col_r].apply(lambda x: canon_r if str(x) in [str(v) for v in vals_r] else x)
+    # ══════════════════════════════════════════
+    # STEP 1 — Apply split rules FIRST so Merge sees the exploded values
+    # ══════════════════════════════════════════
+    for rule in st.session_state.split_rules:
+        pattern = build_split_pattern(rule["delimiters"])
+        if pattern and rule["col"] in df.columns:
+            df = apply_split_rule(df, rule["col"], pattern, rule["strip_ws"])
 
     # ══════════════════════════════════════════
-    # SPLIT MULTI-VALUE CELLS — populate UI & apply
+    # STEP 2 — Populate Split UI (uses post-split df for the column selector)
     # ══════════════════════════════════════════
     split_cat_cols = [c for c in df.select_dtypes(include="object").columns if c != "Period"]
 
@@ -805,7 +766,7 @@ if file_current is not None:
             help="Removes leading/trailing spaces from every value after splitting.",
         )
 
-    # Live preview (show up to 5 unique multi-value examples before the rule is added)
+    # Live preview — samples from the already-split df so results are accurate
     if split_sel_col and split_sel_delims:
         preview_pattern = build_split_pattern(split_sel_delims)
         if preview_pattern:
@@ -861,14 +822,55 @@ if file_current is not None:
             else:
                 st.warning("Select a column and at least one delimiter.")
 
-    # ── Apply all split rules to df (runs every rerun) ──
-    for rule in st.session_state.split_rules:
-        pattern = build_split_pattern(rule["delimiters"])
-        if pattern and rule["col"] in df.columns:
-            before_rows = len(df)
-            df = apply_split_rule(df, rule["col"], pattern, rule["strip_ws"])
-            added = len(df) - before_rows
-            # (log only if rows actually changed — avoids spam on every rerun)
+    # ══════════════════════════════════════════
+    # STEP 3 — Merge UI now reads from the already-split df
+    #          so the value list shows individual tokens, not raw combined strings
+    # ══════════════════════════════════════════
+    merge_cat_cols = list(df.select_dtypes(include="object").columns)
+    merge_cat_cols = [c for c in merge_cat_cols if c != "Period"]
+    with merge_col_ph:
+        merge_sel_col = st.selectbox("Column to merge values in:", merge_cat_cols, key="merge_col_sel")
+    merge_unique_vals = sorted(df[merge_sel_col].dropna().unique().tolist()) if merge_sel_col in df.columns else []
+    with merge_vals_ph:
+        merge_selected_vals = st.multiselect(
+            "Select values to consolidate:",
+            merge_unique_vals,
+            key="merge_vals_sel",
+            help="Pick all the variant spellings / duplicates you want to collapse into one.",
+        )
+    if merge_selected_vals and merge_sel_col in df.columns:
+        freq_counts = df[merge_sel_col].value_counts()
+        suggested = max(merge_selected_vals, key=lambda v: freq_counts.get(v, 0))
+    else:
+        suggested = ""
+    with merge_canon_ph:
+        merge_canonical = st.text_input(
+            "Canonical (unified) name:",
+            value=suggested,
+            key="merge_canon_input",
+            help="All selected values will be replaced with this name.",
+        )
+    with merge_btn_ph:
+        if st.button("➕ Add Merge Rule", key="add_merge_rule"):
+            if merge_sel_col and merge_selected_vals and merge_canonical.strip():
+                new_rule = {
+                    "col": merge_sel_col,
+                    "values": merge_selected_vals,
+                    "canonical": merge_canonical.strip(),
+                }
+                st.session_state.value_merge_rules.append(new_rule)
+                st.session_state.cleaning_log.append(
+                    f"Merge rule: [{', '.join(merge_selected_vals)}] → '{merge_canonical.strip()}' in '{merge_sel_col}'"
+                )
+                st.rerun()
+            else:
+                st.warning("Select a column, at least one value, and enter a canonical name.")
+
+    # ── Apply all merge rules to df ──
+    for rule in st.session_state.value_merge_rules:
+        col_r, vals_r, canon_r = rule["col"], rule["values"], rule["canonical"]
+        if col_r in df.columns:
+            df[col_r] = df[col_r].apply(lambda x: canon_r if str(x) in [str(v) for v in vals_r] else x)
 
     # ── Apply renames & drops ──
     if st.session_state.rename_dict:
