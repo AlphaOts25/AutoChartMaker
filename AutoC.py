@@ -226,20 +226,13 @@ def apply_dark_theme(fig):
 # HELPER FUNCTIONS
 # ==========================================
 def read_csv_with_fallback(uploaded_file):
-    """
-    Attempts to read an uploaded CSV file using multiple common encodings.
-    If all fail, reads with utf-8 but replaces invalid bytes with '?'.
-    """
     encodings_to_try = ['utf-8', 'cp1252', 'latin1', 'iso-8859-1']
-    
     for enc in encodings_to_try:
         try:
-            uploaded_file.seek(0)  # Reset the file pointer to the start
+            uploaded_file.seek(0)
             return pd.read_csv(uploaded_file, encoding=enc)
         except UnicodeDecodeError:
-            continue  # If it fails, move on to the next encoding
-            
-    # Fallback: force read and replace weird characters
+            continue
     uploaded_file.seek(0)
     st.warning("⚠️ Some special characters couldn't be read perfectly and were replaced.")
     return pd.read_csv(uploaded_file, encoding='utf-8', encoding_errors='replace')
@@ -276,7 +269,6 @@ def section_header(label):
     st.markdown(f'<div class="section-header">{label}</div>', unsafe_allow_html=True)
 
 def normalize_phone(val):
-    """Strip spaces, ensure leading 0, 11-digit PH format."""
     if pd.isna(val) or str(val).strip() == "":
         return val
     digits = re.sub(r'\D', '', str(val))
@@ -284,7 +276,7 @@ def normalize_phone(val):
         digits = '0' + digits
     if len(digits) == 11 and digits.startswith('09'):
         return digits
-    return val  # return original if unrecognizable
+    return val
 
 LOAD_SPENDING_MAP = {
     "seldom": "1-10",
@@ -307,6 +299,54 @@ def get_data_quality(df):
         rows.append({"Column": col, "Filled %": fill_pct, "Blank": int(blanks)})
     return pd.DataFrame(rows).sort_values("Filled %", ascending=True)
 
+# ==========================================
+# NEW: SPLIT MULTI-VALUE CELLS HELPER
+# ==========================================
+# Delimiter display name → regex pattern
+DELIMITER_OPTIONS = {
+    "Comma  ( , )":           r",",
+    "Semicolon  ( ; )":       r";",
+    "Slash  ( / )":           r"/",
+    "Backslash  ( \\ )":      r"\\",
+    "Pipe  ( | )":            r"\|",
+    "Dash / Hyphen  ( - )":   r"-",
+    "Ampersand  ( & )":       r"&",
+    "Word: and":              r"\band\b",
+    "Word: or":               r"\bor\b",
+    "Word: and/or":           r"\band/or\b",
+    "Plus  ( + )":            r"\+",
+    "Whitespace only":        r"\s+",
+}
+
+def build_split_pattern(selected_delimiters: list[str]) -> str:
+    """Build a combined regex OR pattern from selected delimiter display names."""
+    patterns = [DELIMITER_OPTIONS[d] for d in selected_delimiters if d in DELIMITER_OPTIONS]
+    return "|".join(patterns) if patterns else None
+
+def apply_split_rule(df: pd.DataFrame, col: str, pattern: str, strip_ws: bool) -> pd.DataFrame:
+    """
+    Split every cell in `col` by `pattern`, explode into separate rows,
+    optionally strip whitespace from each resulting token,
+    and drop empty-string tokens produced by splitting.
+    """
+    if col not in df.columns or not pattern:
+        return df
+
+    def split_cell(val):
+        if pd.isna(val):
+            return [val]
+        parts = re.split(pattern, str(val), flags=re.IGNORECASE)
+        if strip_ws:
+            parts = [p.strip() for p in parts]
+        # Remove empty strings that arise from splitting (e.g. trailing comma)
+        parts = [p for p in parts if p != ""]
+        return parts if parts else [val]
+
+    df = df.copy()
+    df[col] = df[col].apply(split_cell)
+    df = df.explode(col).reset_index(drop=True)
+    return df
+
 
 # ==========================================
 # SESSION STATE INIT
@@ -317,6 +357,7 @@ for key, default in {
     "active_filters": {},
     "cleaning_log": [],
     "value_merge_rules": [],   # list of {col, values, canonical}
+    "split_rules": [],         # list of {col, delimiters, strip_ws}
 }.items():
     if key not in st.session_state:
         st.session_state[key] = default
@@ -380,7 +421,7 @@ with st.sidebar:
         drop_contact = st.toggle("Drop Contact Number column", value=False)
 
     with st.expander("🔎 Find & Replace Value", expanded=False):
-        fr_col_placeholder = st.empty()   # populated after df is loaded
+        fr_col_placeholder = st.empty()
         fr_find    = st.text_input("Find value (exact):", key="fr_find")
         fr_replace = st.text_input("Replace with:",       key="fr_replace")
         apply_fr   = st.button("Apply Find & Replace")
@@ -391,12 +432,11 @@ with st.sidebar:
             "you want to consolidate, then set the one canonical name to keep.</small>",
             unsafe_allow_html=True,
         )
-        merge_col_ph      = st.empty()   # column selector — filled after df loads
-        merge_vals_ph     = st.empty()   # value multiselect — filled after df loads
-        merge_canon_ph    = st.empty()   # canonical text input — filled after df loads
-        merge_btn_ph      = st.empty()   # Add Rule button — filled after df loads
+        merge_col_ph      = st.empty()
+        merge_vals_ph     = st.empty()
+        merge_canon_ph    = st.empty()
+        merge_btn_ph      = st.empty()
 
-        # Show existing rules
         if st.session_state.value_merge_rules:
             st.markdown("<small style='color:#64748b'>Active merge rules:</small>", unsafe_allow_html=True)
             for i, rule in enumerate(st.session_state.value_merge_rules):
@@ -418,6 +458,46 @@ with st.sidebar:
                         st.rerun()
             if st.button("🗑 Clear All Merge Rules", key="clear_all_merges"):
                 st.session_state.value_merge_rules = []
+                st.rerun()
+
+    # ══════════════════════════════════════════
+    # ✂️ SPLIT MULTI-VALUE CELLS  ← NEW
+    # ══════════════════════════════════════════
+    with st.expander("✂️ Split Multi-Value Cells", expanded=False):
+        st.markdown(
+            "<small style='color:#64748b'>"
+            "When one cell holds several answers (e.g. <i>SM, Gaisano</i>), "
+            "split them into separate rows so each value is counted individually."
+            "</small>",
+            unsafe_allow_html=True,
+        )
+
+        split_col_ph    = st.empty()   # column selector — filled after df loads
+        split_delim_ph  = st.empty()   # delimiter multiselect
+        split_ws_ph     = st.empty()   # strip-whitespace toggle
+        split_preview_ph = st.empty()  # live preview
+        split_btn_ph    = st.empty()   # Add Rule button
+
+        # ── Show active split rules ──
+        if st.session_state.split_rules:
+            st.markdown("<small style='color:#64748b'>Active split rules:</small>", unsafe_allow_html=True)
+            for i, rule in enumerate(st.session_state.split_rules):
+                sr1, sr2 = st.columns([4, 1])
+                with sr1:
+                    delim_labels = ", ".join(rule["delimiters"])
+                    st.markdown(
+                        f"<span style='color:#60a5fa;font-size:0.72rem'>"
+                        f"<b>{rule['col']}</b> → split by: "
+                        f"<span style='color:#fbbf24'>{delim_labels}</span></span>",
+                        unsafe_allow_html=True,
+                    )
+                with sr2:
+                    if st.button("✕", key=f"del_split_{i}"):
+                        st.session_state.split_rules.pop(i)
+                        st.session_state.cleaning_log.append(f"Removed split rule #{i+1} on '{rule['col']}'")
+                        st.rerun()
+            if st.button("🗑 Clear All Split Rules", key="clear_all_splits"):
+                st.session_state.split_rules = []
                 st.rerun()
 
     st.divider()
@@ -661,7 +741,6 @@ if file_current is not None:
             key="merge_vals_sel",
             help="Pick all the variant spellings / duplicates you want to collapse into one.",
         )
-    # Suggest canonical = the most frequent of the selected values
     if merge_selected_vals and merge_sel_col in df.columns:
         freq_counts = df[merge_sel_col].value_counts()
         suggested = max(merge_selected_vals, key=lambda v: freq_counts.get(v, 0))
@@ -677,7 +756,6 @@ if file_current is not None:
     with merge_btn_ph:
         if st.button("➕ Add Merge Rule", key="add_merge_rule"):
             if merge_sel_col and merge_selected_vals and merge_canonical.strip():
-                # Prevent duplicate rule for same col+values
                 new_rule = {
                     "col": merge_sel_col,
                     "values": merge_selected_vals,
@@ -696,6 +774,101 @@ if file_current is not None:
         col_r, vals_r, canon_r = rule["col"], rule["values"], rule["canonical"]
         if col_r in df.columns:
             df[col_r] = df[col_r].apply(lambda x: canon_r if str(x) in [str(v) for v in vals_r] else x)
+
+    # ══════════════════════════════════════════
+    # SPLIT MULTI-VALUE CELLS — populate UI & apply
+    # ══════════════════════════════════════════
+    split_cat_cols = [c for c in df.select_dtypes(include="object").columns if c != "Period"]
+
+    with split_col_ph:
+        split_sel_col = st.selectbox(
+            "Column to split:",
+            split_cat_cols,
+            key="split_col_sel",
+            help="Choose the column that contains combined answers.",
+        )
+
+    with split_delim_ph:
+        split_sel_delims = st.multiselect(
+            "Split on (pick one or more):",
+            list(DELIMITER_OPTIONS.keys()),
+            default=["Comma  ( , )"],
+            key="split_delim_sel",
+            help="All selected delimiters will be used together as a combined pattern.",
+        )
+
+    with split_ws_ph:
+        split_strip_ws = st.toggle(
+            "Trim whitespace from each result",
+            value=True,
+            key="split_strip_ws",
+            help="Removes leading/trailing spaces from every value after splitting.",
+        )
+
+    # Live preview (show up to 5 unique multi-value examples before the rule is added)
+    if split_sel_col and split_sel_delims:
+        preview_pattern = build_split_pattern(split_sel_delims)
+        if preview_pattern:
+            sample_vals = (
+                df[split_sel_col]
+                .dropna()
+                .astype(str)
+                .loc[lambda s: s.str.contains(preview_pattern, flags=re.IGNORECASE, regex=True)]
+                .unique()[:5]
+            )
+            with split_preview_ph:
+                if len(sample_vals) > 0:
+                    preview_lines = []
+                    for sv in sample_vals:
+                        parts = re.split(preview_pattern, sv, flags=re.IGNORECASE)
+                        if split_strip_ws:
+                            parts = [p.strip() for p in parts]
+                        parts = [p for p in parts if p]
+                        preview_lines.append(
+                            f"<span style='color:#fbbf24'>{sv}</span> "
+                            f"<span style='color:#475569'>→</span> "
+                            + " · ".join(f"<span style='color:#34d399'>{p}</span>" for p in parts)
+                        )
+                    st.markdown(
+                        "<div style='background:#0e1525;border:1px solid #1f2d45;border-radius:8px;"
+                        "padding:10px 14px;margin:6px 0;font-size:0.75rem;line-height:1.8'>"
+                        "<span style='color:#64748b;font-size:0.7rem;text-transform:uppercase;"
+                        "letter-spacing:1px'>Preview (up to 5 matches)</span><br>"
+                        + "<br>".join(preview_lines)
+                        + "</div>",
+                        unsafe_allow_html=True,
+                    )
+                else:
+                    st.markdown(
+                        "<small style='color:#475569'>No cells in this column match the selected delimiters yet.</small>",
+                        unsafe_allow_html=True,
+                    )
+
+    with split_btn_ph:
+        if st.button("➕ Add Split Rule", key="add_split_rule"):
+            if split_sel_col and split_sel_delims:
+                new_split_rule = {
+                    "col":        split_sel_col,
+                    "delimiters": split_sel_delims,
+                    "strip_ws":   split_strip_ws,
+                }
+                st.session_state.split_rules.append(new_split_rule)
+                delim_str = ", ".join(split_sel_delims)
+                st.session_state.cleaning_log.append(
+                    f"Split rule: '{split_sel_col}' on [{delim_str}]"
+                )
+                st.rerun()
+            else:
+                st.warning("Select a column and at least one delimiter.")
+
+    # ── Apply all split rules to df (runs every rerun) ──
+    for rule in st.session_state.split_rules:
+        pattern = build_split_pattern(rule["delimiters"])
+        if pattern and rule["col"] in df.columns:
+            before_rows = len(df)
+            df = apply_split_rule(df, rule["col"], pattern, rule["strip_ws"])
+            added = len(df) - before_rows
+            # (log only if rows actually changed — avoids spam on every rerun)
 
     # ── Apply renames & drops ──
     if st.session_state.rename_dict:
@@ -876,7 +1049,6 @@ if file_current is not None:
                                 return label
 
                         def safe_reindex(counts_df, col, all_labels):
-                            """Reindex without crashing on duplicate index values."""
                             counts_df = counts_df.drop_duplicates(subset=[col])
                             counts_df = counts_df.set_index(col).reindex(all_labels, fill_value=0).reset_index()
                             counts_df.columns = [col, "Count"]
@@ -889,7 +1061,6 @@ if file_current is not None:
                             subtitle = "Binned ranges · count" if is_numeric_col else "Response count per value"
                             if is_comparing:
                                 card(f"{x_axis} — Count", f"Current vs Previous — {subtitle}")
-                                # Use cleaned df split by Period tag (not raw df_current/df_previous)
                                 df_cur_clean  = df[df["Period"] == "Current"]
                                 df_prev_clean = df[df["Period"] == "Previous"]
                                 cur_c  = bin_col_series(df_cur_clean,  x_axis, n_bins)
@@ -982,9 +1153,6 @@ if file_current is not None:
                     st.plotly_chart(fig, use_container_width=True)
                     st.markdown("</div>", unsafe_allow_html=True)
 
-            # ═══════════════════════════════════════
-            # 🔢 CROSS-TAB COUNT
-            # ═══════════════════════════════════════
             elif chart_type == "🔢 Cross-Tab Count":
                 st.markdown(
                     "<p style='color:#64748b;font-size:0.85rem;margin-bottom:12px;'>"
@@ -1010,7 +1178,6 @@ if file_current is not None:
                         help="The column whose distribution you want to see inside each group.",
                     )
                 with ct3:
-                    # Let user optionally restrict which filter values to show
                     filter_unique = sorted(df[filter_col].dropna().unique().tolist())
                     selected_filter_vals = st.multiselect(
                         "③ Show only these filter values (optional):",
@@ -1032,18 +1199,15 @@ if file_current is not None:
                     ct_df[filter_col] = ct_df[filter_col].astype(str)
                     ct_df[breakdown_col] = ct_df[breakdown_col].astype(str)
 
-                    # Build cross-tab counts
                     cross = (
                         ct_df.groupby([filter_col, breakdown_col])
                         .size()
                         .reset_index(name="Count")
                     )
 
-                    # Percentage within each filter group
                     group_totals = cross.groupby(filter_col)["Count"].transform("sum")
                     cross["Pct"] = (cross["Count"] / group_totals * 100).round(1)
 
-                    # ── Sort breakdown col by total descending for readability ──
                     bd_order = (
                         cross.groupby(breakdown_col)["Count"]
                         .sum()
@@ -1058,7 +1222,6 @@ if file_current is not None:
                     )
 
                     if ct_display == "Grouped Bar":
-                        # ── Top-N control to avoid overcrowding ──
                         top_n = st.slider(
                             "Show top N breakdown values (by total count):",
                             min_value=5, max_value=min(50, len(bd_order)),
@@ -1138,7 +1301,6 @@ if file_current is not None:
                             margin=dict(l=10, r=10, t=60, b=80),
                         )
                         apply_dark_theme(fig)
-                        # Restore per-axis overrides after apply_dark_theme
                         fig.update_xaxes(showgrid=False, tickangle=-38)
                         fig.update_yaxes(gridcolor="#1f2d45", griddash="dot")
                         st.plotly_chart(fig, use_container_width=True)
@@ -1187,7 +1349,6 @@ if file_current is not None:
                             values="Count",
                             fill_value=0,
                         )
-                        # Sort rows by total
                         pivot = pivot.loc[bd_order] if all(v in pivot.index for v in bd_order) else pivot
                         fig = px.imshow(
                             pivot,
@@ -1207,7 +1368,6 @@ if file_current is not None:
 
                     st.markdown("</div>", unsafe_allow_html=True)
 
-                    # ── Summary table ──
                     with st.expander("📋 View Cross-Tab Table", expanded=False):
                         pivot_tbl = cross.pivot_table(
                             index=breakdown_col,
@@ -1262,7 +1422,6 @@ if file_current is not None:
 
         quality_df = get_data_quality(df)
 
-        # Visual completeness bars
         for _, row in quality_df.iterrows():
             pct = row["Filled %"]
             color = "#10b981" if pct >= 90 else ("#f59e0b" if pct >= 60 else "#ef4444")
@@ -1287,7 +1446,6 @@ if file_current is not None:
 
         st.divider()
 
-        # Summary stats
         good = (quality_df["Filled %"] >= 90).sum()
         fair = ((quality_df["Filled %"] >= 60) & (quality_df["Filled %"] < 90)).sum()
         low  = (quality_df["Filled %"] < 60).sum()
@@ -1301,14 +1459,12 @@ if file_current is not None:
 
         st.divider()
 
-        # Duplicate check
         dup_count = df.duplicated().sum()
         if dup_count > 0:
             st.warning(f"⚠️ {dup_count} duplicate rows detected. Use **Deduplicate Rows** in the sidebar to remove them.")
         else:
             st.success("✅ No duplicate rows found.")
 
-        # Unique value distribution for categorical columns
         st.markdown("---")
         card("Unique Value Counts", "Top categorical columns")
         cat_summary = []
