@@ -225,6 +225,25 @@ def apply_dark_theme(fig):
 # ==========================================
 # HELPER FUNCTIONS
 # ==========================================
+def read_csv_with_fallback(uploaded_file):
+    """
+    Attempts to read an uploaded CSV file using multiple common encodings.
+    If all fail, reads with utf-8 but replaces invalid bytes with '?'.
+    """
+    encodings_to_try = ['utf-8', 'cp1252', 'latin1', 'iso-8859-1']
+    
+    for enc in encodings_to_try:
+        try:
+            uploaded_file.seek(0)  # Reset the file pointer to the start
+            return pd.read_csv(uploaded_file, encoding=enc)
+        except UnicodeDecodeError:
+            continue  # If it fails, move on to the next encoding
+            
+    # Fallback: force read and replace weird characters
+    uploaded_file.seek(0)
+    st.warning("⚠️ Some special characters couldn't be read perfectly and were replaced.")
+    return pd.read_csv(uploaded_file, encoding='utf-8', encoding_errors='replace')
+
 def fix_duplicate_columns(df):
     df_clean = df.copy()
     base_columns = {}
@@ -486,12 +505,12 @@ st.markdown(
 if file_current is not None:
 
     # ── READ & CONCAT ────────────────────────
-    df_current = pd.read_csv(file_current)
+    df_current = read_csv_with_fallback(file_current)
     df_current = fix_duplicate_columns(df_current)
     df_current["Period"] = "Current"
 
     if file_previous is not None:
-        df_previous = pd.read_csv(file_previous)
+        df_previous = read_csv_with_fallback(file_previous)
         df_previous = fix_duplicate_columns(df_previous)
         df_previous["Period"] = "Previous"
         df = pd.concat([df_current, df_previous], ignore_index=True)
